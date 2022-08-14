@@ -12,7 +12,7 @@
 
 在ES5中共有6个锚点
 
-1. ^ （起点锚）
+1. ^ (起点锚）
 2. $ (终点锚)
 3. \b (单词之间的锚)
 4. \B (非单词之间的锚)
@@ -37,58 +37,66 @@ words.replace(pl, "💧"); // 开💧水矿泉💧水纯净💧水
 
 words.replace(nl, "💧"); // 💧开水💧矿💧泉水💧纯💧净水
 
-/* 在这个示例里，我声明了一个words变量，包含了一串字符串
-
-第一个正则将全局匹配`水`字符前面的位置并插入一个emoji符号
-
-第二个正则将全局匹配<strong>非</strong>`水`字符前面的位置并插入一个emoji符号. */
-
 ```
 
-通过上面的例子，很清晰的知道了`(?=p)` 和 `(?!p)`的作用是什么`.
+在这个示例里，我声明了一个words变量，包含了一串字符串
 
-在es6+中新增两个锚点
+第一个正则pl将全局匹配`水`字符前面的位置并插入一个emoji符号，第二个正则nl将全局匹配非`水`字符前面的位置并插入一个emoji符号.
 
-7. (?<=p) behind p
+通过上面的例子，我们知道了`(?=p)` 和 `(?!p)`所指代的作用`.
 
-8. (?<!p) not-behind p
+在es6+中还新增两个锚点
+
+7. (?<=p) behind p （匹配模式p后面的position）
+
+8. (?<!p) not-behind p （匹配非模式p后面的position）
 
 其中`(?<=p)` 表示在匹配的模式p后面的位置， 而`(?<!p)`就是`(?<=p)`的反面意思，含义是在匹配模式p<strong>非</strong>后面的位置。
 
-我们再借助最初的例子增加几道小题加深对正则的掌握:
+我们再借助最初的例子增加几道小题以便加深对通过正则匹配字符串位置的掌握:
 
 题目一：在每个`水`字符的后面插入一个emoji符号
-
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/(?<=水)/g, "💧"); // 开水💧矿泉水💧纯净水💧'
-```
+</code>
+</details><br/>
 
 题目二: 在变量`words`的值前面插入一个emoji.
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/^/g, "💧"); // 💧开水矿泉水纯净水
-```
+</code>
+</details><br/>
 
 题目三: 在变量`words`的值后面插入一个emoji.
 
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/$/g, "💧"); // 开水矿泉水纯净水💧
-```
+</code>
+</details><br />
 
 题目四: 在变量`words`的每个字符中插入一个emoji.
 
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/\B/g, "💧"); // 💧开💧水💧矿💧泉💧水💧纯💧净💧水
-```
+</code>
+</details><br />
 
 题目五: 在变量`words`的`水`字符的前面与后面插入一个emoji.
 
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/(?<=水)|(?=水)/g, "💧"); // 开💧水💧矿泉💧水💧纯净💧水💧'
-```
-
+</code>
+</details><br />
 
 题目六：在变量`words`的每个字符中插入一个emoji(开头和结尾不插入).
 
-```js
+<details><summary>查看答案</summary>
+<code>
 words.replace(/(?!(^|$))/g, "💧"); // 开💧水💧矿💧泉💧水💧纯💧净💧水'
-```
+</code>
+</details><br />
