@@ -13,11 +13,23 @@
 在ES5中共有6个锚点
 
 1. ^ (起点锚）
-2. $ (终点锚)
-3. \b (单词之间的锚)
-4. \B (非单词之间的锚)
-5. (?=p)  followed by: p
-6. (?!p)  not-followed by: p
+```md
+    ↑ HELLO
+```
+3. $ (终点锚)
+```md
+    HELLO ↑
+```
+5. \b (单词之间的锚)
+```md
+    ↑Hello↑ ↑World!↑
+```
+7. \B (非单词之间的锚)
+```md
+    H↑e↑l↑l↑o W↑o↑r↑l↑d!↑
+```
+9. (?=p)  followed by: p
+10. (?!p)  not-followed by: p
 
 第五、六点需要额外多费些口水解释其作用.
 
@@ -47,9 +59,9 @@ words.replace(nl, "💧"); // 💧开水💧矿💧泉水💧纯💧净水
 
 在es6+中还新增两个锚点
 
-7. (?<=p) behind p （匹配模式p后面的position）
+7. (?<=p) behind p 
 
-8. (?<!p) not-behind p （匹配非模式p后面的position）
+8. (?<!p) not-behind p
 
 其中`(?<=p)` 表示在匹配的模式p后面的位置， 而`(?<!p)`就是`(?<=p)`的反面意思，含义是在匹配模式p<strong>非</strong>后面的位置。
 
