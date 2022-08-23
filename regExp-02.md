@@ -28,7 +28,6 @@ reg.test("I love java"); // true
 reg.test("I love javascript"); // true
 ```
 
-
 ### 括号中的分组引用
 
 所谓的分组引用就是对匹配的分组进行数据提取，以匹配年月日为例:
@@ -73,6 +72,18 @@ const regex = /(\d{4})-(\d{2})-(\d{2})/;
 ```js
 var regX = /^((\d)(\d(\d)))\1\2\3\4$/;
 ```
+
+将上面的正则拆解出来：
+
+`\1` 找到第一个开括号和成对的闭括号 <span style="color: red;font-weight: bold">(</span>(\d)(\d(\d))<span style="color: red;font-weight: bold">)</span>\1\2\3\4$/ 
+
+`\2` 找到第二个开括号 (<span style="color: red;font-weight: bold">(</span>\d<span style="color: red;font-weight: bold">)</span>(\d(\d)))\1\2\3\4$/ 
+
+`\3` 找到第三个开括号 `(\d(\d))`
+
+`\4` 找到第四个开括号 `(\d)`
+
+如果想要通过此正则，其匹配的内容格式应为：`1231231233`
 
 ### 非捕获括号
 
