@@ -31,12 +31,16 @@ escapeHTML("<p>This A Normal paragraph</p>")
 function unEscapeHTML (str) {
     const htmlEntity = {
         lt: "<",
-        gt: ">",
+        gt: ">",//
         quot: '"',
         amp: "&",
     }
 
     return str.replace(/\&([^;]+);/g, function(match, key) {
+        // 如果有分组引用，则key为分组匹配的字符， 否则第二个参数是匹配的串的索引
+        console.log(match, key); 
         return htmlEntity[key] || match;
     })
 }
+
+unEscapeHTML('&lt;p&gt;This A Normal paragraph&lt;/p&gt;');
