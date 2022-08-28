@@ -38,6 +38,7 @@ function unEscapeHTML (str) {
 
     return str.replace(/\&([^;]+);/g, function(match, key) {
         // 如果有分组引用，则key为分组匹配的字符， 否则第二个参数是匹配的串的第一个字符出现的索引
+        // update: 如果一个正则既有分组引用又有非分组模式，当match的是一个非分组的字符时，第一个参数值是匹配的字符，没有第二个参数
         console.log(match, key); 
         return htmlEntity[key] || match;
     })
