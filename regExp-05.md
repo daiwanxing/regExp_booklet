@@ -31,3 +31,12 @@ const inputStr =  "foo.ts bar.css fn.scss component.vue";
 ```js
 /\w+\.(?:s(?:a|c)|le|c)ss/;
 ```
+
+#### 独立出确定的字符
+
+```js
+/\d+/ // 表示数字至少匹配一次，至多匹配N次
+
+// 优化后
+/\d\d*/ // 作用同上，但是可以加快是否匹配失败，进而加快移位速度
+```
