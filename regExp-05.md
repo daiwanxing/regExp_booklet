@@ -20,7 +20,7 @@ const inputStr =  "foo.ts bar.css fn.scss component.vue";
 ```js
 /\w+\.(s(a|c)|le|c)ss/;
 
-"foo.ts bar.css fn.scss component.vue".match(/\w+\.(?:s(?:a|c)|le|c)ss/g); 
+"foo.ts bar.css fn.scss component.vue".match(/\w+\.(s(a|c)|le|c)ss/g); 
 // ['bar.css', 'fn.scss']
 ```
 
