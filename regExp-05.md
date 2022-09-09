@@ -11,7 +11,6 @@ const inputStr =  "foo.ts bar.css fn.scss component.vue";
 
 再分析sass和scss都是以`s`开头, 紧接着的可能是`a`或者`c`，可以得到如下正则: `/(?:s(a|c)ss)/`,
 
-<!-- (?:s(?:a|c)|le|c)s{2}$ -->
 
 最后单独对`less`中的`le`字符和`css`中的`c`字符做提取处理,
 `/(?:(?:le|c)ss)/`
