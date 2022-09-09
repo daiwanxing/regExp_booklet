@@ -54,7 +54,7 @@ const inputStr = "abbbc";
 #### 3. 有回溯的匹配
 
 ```js
-const regExp = /ab{1,3}c/;
+const regExp = /ab{1,3}b/;
 
-const inputStr = "abbc";
+const inputStr = "abbb";
 ```
