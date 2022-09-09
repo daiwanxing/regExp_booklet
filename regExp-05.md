@@ -9,11 +9,11 @@ const inputStr =  "foo.ts bar.css fn.scss component.vue";
 ```
 先将这些样式类型文件公共的部分提取出来：`ss` -> `/ss/`
 
-再分析sass和scss都是以`s`开头, 紧接着的可能是`a`或者`c`，可以得到如下正则: `/(?:s(a|c)ss)/`,
+再分析sass和scss都是以`s`开头, 紧接着的可能是`a`或者`c`，可以得到如下正则: `/(s(a|c)ss)/`,
 
 
 最后单独对`less`中的`le`字符和`css`中的`c`字符做提取处理,
-`/(?:(?:le|c)ss)/`
+`/((le|c)ss)/`
 
 合并上述两个正则表达式, 可以得到如下结构
 
