@@ -28,7 +28,7 @@ const inputStr =  "foo.ts bar.css fn.scss component.vue";
 可以再进一步做优化：
 
 ```js
-/\w+\.(?:s(?:a|c)|le|c)ss/;
+/\w+\.(?:s[ac]{1}|le|c)ss/;
 ```
 
 #### 独立出确定的字符
